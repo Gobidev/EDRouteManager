@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import messagebox
 from EDRouteManager.utils.edsm import is_known
+from EDRouteManager.config.config import *
+import json
 
 HEIGHT = 170
 WIDTH = 250
@@ -11,7 +13,8 @@ def ok_button_press():
     if not is_known(commander_name):
         messagebox.showerror("Error", "Commander is not known to EDSM")
     else:
-        pass
+        set_commander_name(commander_name)
+        root.destroy()
 
 
 root = tk.Tk()
