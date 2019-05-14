@@ -14,7 +14,7 @@ class MainView(tk.Tk):
 
         # Navigation frame
         navigation_frame = tk.Frame(self, bg="#000000", height=600, width=300)
-        navigation_frame.pack(side=tk.LEFT)
+        navigation_frame.place(relx=0, rely=0, relheight=1, relwidth=0.27)
 
         # Current Route button for navigation
         current_route_button = tk.Button(navigation_frame, bd=0, bg="#000000", fg="#efefef", text="Current Route")
