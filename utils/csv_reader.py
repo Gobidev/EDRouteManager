@@ -31,3 +31,17 @@ def get_systems(table):
         systems.append(row[0])
 
     return systems
+
+
+def is_system_of_route(commander_system, route_systems):
+
+    for route_system in route_systems:
+        if route_system == commander_system:
+            return True, route_systems.index(route_system)
+    return False, False
+
+
+table = csv_to_list("example.csv")
+table = delete_first_row(table)
+systems = get_systems(table)
+print(is_system_of_route("Omega Sector VE-Q b5-15", systems))
