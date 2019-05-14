@@ -19,6 +19,8 @@ def ok_button_press():
 
 root = tk.Tk()
 
+root.title("EDRM")
+
 canvas = tk.Canvas(root, height=HEIGHT, width=WIDTH)
 canvas.pack()
 
