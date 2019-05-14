@@ -9,12 +9,16 @@ class MainView(tk.Tk):
 
         self.title_font = tkfont.Font(family='Cambria', size=18, weight="bold", slant="italic")
 
+        canvas = tk.Canvas(height=600, width=1100)
+        canvas.pack()
+
         # Navigation frame
         navigation_frame = tk.Frame(self, bg="#000000", height=600, width=300)
         navigation_frame.pack(side=tk.LEFT)
 
         # Current Route button for navigation
         current_route_button = tk.Button(navigation_frame, bd=0, bg="#000000", fg="#efefef", text="Current Route")
+        current_route_button.pack()
 
 
         # Container
