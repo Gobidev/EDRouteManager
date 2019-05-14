@@ -41,7 +41,8 @@ def is_system_of_route(commander_system, route_systems):
     return False, False
 
 
-table = csv_to_list("example.csv")
-table = delete_first_row(table)
-systems = get_systems(table)
-print(is_system_of_route("Omega Sector VE-Q b5-15", systems))
+# ------- only for testing purposes -------
+# table = csv_to_list("example.csv")
+# table = delete_first_row(table)
+# systems = get_systems(table)
+# print(is_system_of_route("Omega Sector VE-Q b5-15", systems))
