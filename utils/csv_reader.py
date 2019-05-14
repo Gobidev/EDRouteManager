@@ -14,3 +14,8 @@ def csv_to_list(filename):
         table.append(columns)
 
     return table
+
+
+def delete_first_row(table):
+    del table[0]
+    return table
