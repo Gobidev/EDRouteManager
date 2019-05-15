@@ -39,4 +39,4 @@ def start_input_window(height=170, width=250):
     root.mainloop()
 
 
-# start_input_window()
+start_input_window()
