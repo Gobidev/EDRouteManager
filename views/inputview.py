@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import messagebox
 from utils.edsm import is_known
 from config.config import *
-from views.mainview import *
 
 
 def start_input_window(height=170, width=250):
@@ -14,6 +13,7 @@ def start_input_window(height=170, width=250):
         else:
             set_commander_name(commander_name)
             root.destroy()
+            from views.mainview import start_main_window
             start_main_window()
 
     root = tk.Tk()
@@ -39,4 +39,4 @@ def start_input_window(height=170, width=250):
     root.mainloop()
 
 
-start_input_window()
+# start_input_window()

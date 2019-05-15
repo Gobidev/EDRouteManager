@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog
 from config.config import *
-from views.inputview import *
 
 
 def start_main_window(height=335, width=425):
@@ -14,6 +13,7 @@ def start_main_window(height=335, width=425):
 
     def settings_button_press():
         root.destroy()
+        from views.inputview import start_input_window
         start_input_window()
 
     root = tk.Tk()
