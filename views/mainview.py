@@ -1,4 +1,5 @@
 import tkinter as tk
+from config.config import *
 
 
 def start_main_window(height=335, width=425):
@@ -21,10 +22,13 @@ def start_main_window(height=335, width=425):
     frame.place(relwidth=1, relheight=1)
 
     open_button = tk.Button(frame, text="Open Route", command=open_button_press)
-    open_button.place(relx=1/20, rely=1/20, relwidth=1/5, relheight=1/10)
+    open_button.place(relx=1-1/5, rely=0, relwidth=1/5, relheight=1/10)
 
     settings_button = tk.Button(frame, text="Settings", command=settings_button_press)
-    settings_button.place(relx=0.7, rely=1/20, relwidth=1/4, relheight=1/10)
+    settings_button.place(relx=1-1/5, rely=1/10+0.01, relwidth=1/5, relheight=1/10)
+
+    commander_name_label = tk.Label(frame, text="Commander Name:")
+    commander_name_label.place(relx=0.03, rely=0.03, relwidth=1/4, relheight=1/20)
 
     root.mainloop()
 
