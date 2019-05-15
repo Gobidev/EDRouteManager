@@ -3,10 +3,12 @@ from tkinter import filedialog
 from config.config import *
 
 
-def start_main_window(height=335, width=425):
+def set_info_content(commander_name, current_system_name, next_system_name):
+    info_label_2.config(text=(commander_name + "\n" + current_system_name + "\n" + next_system_name))
 
-    def set_info_content(commander_name, current_system_name, next_system_name):
-        info_label_2.config(text=(commander_name+"\n"+current_system_name+"\n"+next_system_name))
+
+def start_main_window(height=335, width=425):
+    global info_label_2
 
     def open_button_press():
         root.filename = filedialog.askopenfilename(
