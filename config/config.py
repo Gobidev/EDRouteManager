@@ -1,5 +1,9 @@
 import json
+import sqlite3
 from utils.edsm import get_commander_system
+
+connection = sqlite3.connect("config.db")
+cursor = connection.cursor()
 
 config_filepath = "..\config\config.json"
 
@@ -43,3 +47,5 @@ def refresh_current_system():
     with open(config_filepath, "w") as f:
         json.dump(config, f)
         print("set current_system to", system)
+
+connection.commit()
