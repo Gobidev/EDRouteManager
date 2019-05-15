@@ -3,11 +3,8 @@ from tkinter import messagebox
 from utils.edsm import is_known
 from config.config import *
 
-HEIGHT = 170
-WIDTH = 250
 
-
-def start_input_window():
+def start_input_window(height=170, width=250):
 
     def ok_button_press():
         commander_name = name_entry.get()
@@ -22,7 +19,7 @@ def start_input_window():
     root.title("EDRM")
     root.tk.call('wm', 'iconphoto', root._w, tk.PhotoImage(file='logo.gif'))
 
-    canvas = tk.Canvas(root, height=HEIGHT, width=WIDTH)
+    canvas = tk.Canvas(root, height=height, width=width)
     canvas.pack()
 
     frame = tk.Frame(root, bd=5)
