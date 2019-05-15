@@ -3,6 +3,7 @@ from utils.edsm import get_commander_system
 
 config_filepath = "..\config\config.json"
 
+
 def set_commander_name(commander_name):
     config = {"commander_name": commander_name}
     with open(config_filepath, "w") as f:
