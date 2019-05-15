@@ -27,8 +27,11 @@ def start_main_window(height=335, width=425):
     settings_button = tk.Button(frame, text="Settings", command=settings_button_press)
     settings_button.place(relx=1-1/5, rely=1/10+0.01, relwidth=1/5, relheight=1/10)
 
-    commander_name_label = tk.Label(frame, text="Commander Name:")
-    commander_name_label.place(relx=0.03, rely=0.03, relwidth=1/4, relheight=1/20)
+    info_label = tk.Label(frame, text="Commander Name:\nCurrent System:\nNext System:", justify="left")
+    info_label.place(relx=0.03, rely=0.03, relwidth=1/4, relheight=1/7)
+
+    info_label_2 = tk.Label(frame, text="Gobi007\nSagittarius A*\nSol", justify="left")
+    info_label_2.place(relx=0.35, rely=0.03, relwidth=1/3.5, relheight=1/7)
 
     root.mainloop()
 
