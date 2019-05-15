@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import messagebox
 from utils.edsm import is_known
 from config.config import *
-import json
 
 HEIGHT = 170
 WIDTH = 250
