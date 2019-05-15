@@ -48,4 +48,5 @@ def refresh_current_system():
         json.dump(config, f)
         print("set current_system to", system)
 
+
 connection.commit()
