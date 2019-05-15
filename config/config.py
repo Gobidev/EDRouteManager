@@ -1,6 +1,7 @@
 import json
 from utils.edsm import get_commander_system
 
+
 def set_commander_name(commander_name):
     config = {"commander_name": commander_name}
     with open("config.json", "w") as f:
