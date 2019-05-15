@@ -40,4 +40,3 @@ def refresh_current_system():
     with open("config.json", "w") as f:
         json.dump(config, f)
         print("set current_system to", system)
-
