@@ -1,11 +1,15 @@
 import tkinter as tk
+from tkinter import filedialog
 from config.config import *
 
 
 def start_main_window(height=335, width=425):
 
     def open_button_press():
-        pass
+        root.filename = filedialog.askopenfilename(
+            initialdir="/", title="Select file", filetypes=(("csv files", "*.csv"), ("all files", "*.*"))
+        )
+        set_file_path(root.filename)
 
     def settings_button_press():
         pass
