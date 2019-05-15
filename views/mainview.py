@@ -1,31 +1,50 @@
 import tkinter as tk
-from tkinter import font as tkfont
+from tkinter import filedialog
+from config.config import *
 
 
-class MainView(tk.Tk):
+def start_main_window(height=335, width=425):
 
-    def __init__(self, *args, **kwargs):
-        tk.Tk.__init__(self, *args, **kwargs)
+    def set_info_content(commander_name, current_system_name, next_system_name):
+        info_label_2.config(text=(commander_name+"\n"+current_system_name+"\n"+next_system_name))
 
-        self.title_font = tkfont.Font(family='Cambria', size=18, weight="bold", slant="italic")
+    def open_button_press():
+        root.filename = filedialog.askopenfilename(
+            initialdir="/", title="Select file", filetypes=(("csv files", "*.csv"), ("all files", "*.*"))
+        )
+        set_file_path(root.filename)
 
-        canvas = tk.Canvas(height=600, width=1100)
-        canvas.pack()
+    def settings_button_press():
+        root.destroy()
+        from views.inputview import start_input_window
+        start_input_window()
 
-        # Navigation frame
-        navigation_frame = tk.Frame(self, bg="#000000", height=600, width=300)
-        navigation_frame.place(relx=0, rely=0, relheight=1, relwidth=0.27)
+    root = tk.Tk()
 
-        # Current Route button for navigation
-        current_route_button = tk.Button(navigation_frame, bd=0, bg="#000000", fg="#efefef", text="Current Route")
-        current_route_button.pack()
+    root.title("EDRM")
+    root.tk.call('wm', 'iconphoto', root._w, tk.PhotoImage(file='logo.gif'))
+    root.iconbitmap(default='logo.gif')
+
+    canvas = tk.Canvas(root, height=height, width=width)
+    canvas.pack()
+
+    frame = tk.Frame(root, bd=5)
+    frame.place(relwidth=1, relheight=1)
+
+    open_button = tk.Button(frame, text="Open Route", command=open_button_press)
+    open_button.place(relx=1-1/5, rely=0, relwidth=1/5, relheight=1/10)
+
+    settings_button = tk.Button(frame, text="Settings", command=settings_button_press)
+    settings_button.place(relx=1-1/5, rely=1/10+0.01, relwidth=1/5, relheight=1/10)
+
+    info_label = tk.Label(frame, text="Commander Name:\nCurrent System:\nNext System:", justify="left")
+    info_label.place(relx=0.03, rely=0.03, relwidth=1/4, relheight=1/7)
+
+    info_label_2 = tk.Label(frame, text="\n \n \n", justify="left")
+    info_label_2.place(relx=0.35, rely=0.03, relwidth=1/3.5, relheight=1/7)
+    # set_info_content("Gobi007", "Sol", "Sagittarius A*")
+
+    root.mainloop()
 
 
-        # Container
-        container = tk.Frame(self, width=800)
-        container.pack(side="top", fill="both", expand=True)
-
-        self.mainloop()
-
-
-mv = MainView()
+start_main_window()
