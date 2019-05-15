@@ -5,6 +5,9 @@ from config.config import *
 
 def start_main_window(height=335, width=425):
 
+    def set_info_content(commander_name, current_system_name, next_system_name):
+        info_label_2.config(text=(commander_name+"\n"+current_system_name+"\n"+next_system_name))
+
     def open_button_press():
         root.filename = filedialog.askopenfilename(
             initialdir="/", title="Select file", filetypes=(("csv files", "*.csv"), ("all files", "*.*"))
@@ -37,8 +40,9 @@ def start_main_window(height=335, width=425):
     info_label = tk.Label(frame, text="Commander Name:\nCurrent System:\nNext System:", justify="left")
     info_label.place(relx=0.03, rely=0.03, relwidth=1/4, relheight=1/7)
 
-    info_label_2 = tk.Label(frame, text="Gobi007\nSagittarius A*\nSol", justify="left")
+    info_label_2 = tk.Label(frame, text="\n \n \n", justify="left")
     info_label_2.place(relx=0.35, rely=0.03, relwidth=1/3.5, relheight=1/7)
+    # set_info_content("Gobi007", "Sol", "Sagittarius A*")
 
     root.mainloop()
 
