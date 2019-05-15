@@ -20,6 +20,7 @@ def start_main_window(height=335, width=425):
 
     root.title("EDRM")
     root.tk.call('wm', 'iconphoto', root._w, tk.PhotoImage(file='logo.gif'))
+    root.iconbitmap(default='logo.gif')
 
     canvas = tk.Canvas(root, height=height, width=width)
     canvas.pack()
