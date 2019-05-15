@@ -1,31 +1,32 @@
 import tkinter as tk
-from tkinter import font as tkfont
 
 
-class MainView(tk.Tk):
+def start_main_window(height=335, width=425):
 
-    def __init__(self, *args, **kwargs):
-        tk.Tk.__init__(self, *args, **kwargs)
+    def open_button_press():
+        pass
 
-        self.title_font = tkfont.Font(family='Cambria', size=18, weight="bold", slant="italic")
+    def settings_button_press():
+        pass
 
-        canvas = tk.Canvas(height=600, width=1100)
-        canvas.pack()
+    root = tk.Tk()
 
-        # Navigation frame
-        navigation_frame = tk.Frame(self, bg="#000000", height=600, width=300)
-        navigation_frame.place(relx=0, rely=0, relheight=1, relwidth=0.27)
+    root.title("EDRM")
+    root.tk.call('wm', 'iconphoto', root._w, tk.PhotoImage(file='logo.gif'))
 
-        # Current Route button for navigation
-        current_route_button = tk.Button(navigation_frame, bd=0, bg="#000000", fg="#efefef", text="Current Route")
-        current_route_button.pack()
+    canvas = tk.Canvas(root, height=height, width=width)
+    canvas.pack()
+
+    frame = tk.Frame(root, bd=5)
+    frame.place(relwidth=1, relheight=1)
+
+    open_button = tk.Button(frame, text="Open Route", command=open_button_press)
+    open_button.place(relx=1/20, rely=1/20, relwidth=1/5, relheight=1/10)
+
+    settings_button = tk.Button(frame, text="Settings", command=settings_button_press)
+    settings_button.place(relx=0.7, rely=1/20, relwidth=1/4, relheight=1/10)
+
+    root.mainloop()
 
 
-        # Container
-        container = tk.Frame(self, width=800)
-        container.pack(side="top", fill="both", expand=True)
-
-        self.mainloop()
-
-
-mv = MainView()
+start_main_window()
