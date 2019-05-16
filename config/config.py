@@ -104,4 +104,3 @@ def refresh_current_system():
 
 def get_current_system():
     return read_yaml("current_system")
-

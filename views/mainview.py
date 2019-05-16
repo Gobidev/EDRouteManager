@@ -44,6 +44,5 @@ def start_main_window(height=335, width=425):
 
     info_label_2 = tk.Label(frame, text="\n \n \n", justify="left")
     info_label_2.place(relx=0.35, rely=0.03, relwidth=1/3.5, relheight=1/7)
-    # set_info_content("Gobi007", "Sol", "Sagittarius A*")
 
     root.mainloop()
