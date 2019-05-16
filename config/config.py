@@ -2,7 +2,7 @@ import json
 from utils.edsm import get_commander_system
 
 
-config_filepath = "..\config\config.yml"
+config_filepath = "../config/config.yml"
 
 
 def write_to_yaml(key, value):

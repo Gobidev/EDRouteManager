@@ -24,8 +24,8 @@ def start_main_window(height=335, width=425):
     root = tk.Tk()
 
     root.title("EDRM")
-    root.tk.call('wm', 'iconphoto', root._w, tk.PhotoImage(file='logo.gif'))
-    root.iconbitmap(default='logo.gif')
+    root.tk.call('wm', 'iconphoto', root._w, tk.PhotoImage(file='../views/logo.gif'))
+    root.iconbitmap(default='../views/logo.gif')
 
     canvas = tk.Canvas(root, height=height, width=width)
     canvas.pack()
@@ -49,4 +49,4 @@ def start_main_window(height=335, width=425):
     root.mainloop()
 
 
-start_main_window()
+# start_main_window()
