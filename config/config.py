@@ -1,4 +1,3 @@
-import json
 from utils.edsm import get_commander_system
 
 
