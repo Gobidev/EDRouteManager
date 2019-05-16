@@ -44,6 +44,3 @@ def start_input_window(height=170, width=250):
     ok_button.place(relwidth=0.2, relheight=0.18, relx=0.72, rely=0)
 
     root.mainloop()
-
-
-# start_input_window()
