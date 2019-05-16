@@ -4,7 +4,7 @@ EDRouteManager is a simple tool for using "neutron-highways" in Elite: Dangerous
 
 **How to use**
 
-1. Download the [latest release](https://github-production-release-asset-2e65be.s3.amazonaws.com/186413695/a118e680-77f4-11e9-88bf-54e610afd264?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20190516%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190516T150745Z&X-Amz-Expires=300&X-Amz-Signature=88bf5e6e6cde41fd48fb7aee315ec8e6b4d1234080b995a854ba05abd2a6ff17&X-Amz-SignedHeaders=host&actor_id=50576978&response-content-disposition=attachment%3B%20filename%3DEDRouteManager_v0.1-alpha.zip&response-content-type=application%2Foctet-stream) of EDRouteManager
+1. Download the [latest release](https://github.com/Gobidev/EDRouteManager/releases) of EDRouteManager
 2. Unzip the file
 3. Make sure that you are connected to your EDSM account (EDDiscovery, EDMarketConnector, etc.).
 You can get to EDSM [here](https://www.edsm.net/)
