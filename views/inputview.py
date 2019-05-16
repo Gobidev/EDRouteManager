@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 from utils.edsm import is_known
 from config.config import *
+import threading
 
 
 def start_input_window(height=170, width=250):
@@ -14,7 +15,10 @@ def start_input_window(height=170, width=250):
             set_commander_name(commander_name)
             root.destroy()
             from views.mainview import start_main_window
-            start_main_window()
+            threading.Thread(target=start_main_window).start()
+            refresh_current_system()
+            from views.mainview import set_info_content
+            set_info_content(get_commander_name(), get_current_system(), "")
 
     root = tk.Tk()
 

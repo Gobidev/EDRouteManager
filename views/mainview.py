@@ -47,6 +47,3 @@ def start_main_window(height=335, width=425):
     # set_info_content("Gobi007", "Sol", "Sagittarius A*")
 
     root.mainloop()
-
-
-# start_main_window()

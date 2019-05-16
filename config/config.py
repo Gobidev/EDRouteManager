@@ -100,3 +100,8 @@ def refresh_current_system():
 
     # set system to config
     write_to_yaml("current_system", system)
+
+
+def get_current_system():
+    return read_yaml("current_system")
+
