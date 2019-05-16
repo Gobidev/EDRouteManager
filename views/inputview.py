@@ -18,7 +18,6 @@ def start_input_window(height=170, width=250):
             from main.EDRouteManager import loop_refresh
             threading.Thread(target=start_main_window).start()
             threading.Thread(target=loop_refresh).start()
-            refresh_current_system()
             from views.mainview import set_info_content
             set_info_content(get_commander_name(), get_current_system(), "")
 
