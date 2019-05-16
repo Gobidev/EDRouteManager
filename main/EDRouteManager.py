@@ -29,11 +29,11 @@ def loop_refresh(seconds=4):
                 print("index:", index)
                 if is_system:
                     next_system = systems[index+1]
-                    del systems[index+1]
-                else:
-                    next_system = systems[0]
 
-            copy_to_clipboard(next_system)
+            try:
+                copy_to_clipboard(next_system)
+            except:
+                pass
 
         set_info_content(get_commander_name(), get_current_system(), next_system)
 
