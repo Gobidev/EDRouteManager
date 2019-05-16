@@ -49,6 +49,30 @@ def write_to_yaml(key, value):
     new_file.write(final_string)
     new_file.close()
 
+
+def read_yaml(key):
+
+    file_content = {}
+    file = open(config_filepath, "r")
+    content = file.readlines()
+    lines = []
+
+    # remove \n
+    for i in content:
+        i = i.replace("\n", "")
+        lines.append(i)
+
+    # convert content to dictionary
+    for n in lines:
+        content_list = n.split(": ")
+        file_content[content_list[0]] = content_list[1]
+
+    try:
+        return file_content[key]
+    except:
+        return "key not found in config"
+
+
 def set_commander_name(commander_name):
     config = {"commander_name": commander_name}
     with open(config_filepath, "w") as f:
