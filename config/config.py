@@ -74,41 +74,29 @@ def read_yaml(key):
 
 
 def set_commander_name(commander_name):
-    config = {"commander_name": commander_name}
-    with open(config_filepath, "w") as f:
-        json.dump(config, f)
-        print("set commander_name to", commander_name)
+    write_to_yaml("commander_name", commander_name)
 
 
 def get_commander_name():
-    config = "commander_name"
-    with open(config_filepath, "r") as f:
-        return json.load(f)[config]
+    return read_yaml("commander_name")
 
 
 def set_file_path(file_path):
-    config = {"file_path": file_path}
-    with open(config_filepath, "w") as f:
-        json.dump(config, f)
-        print("set file_path to", file_path)
+    write_to_yaml("file_path", file_path)
 
 
 def get_file_path():
-    config = "file_path"
-    with open(config_filepath, "r") as f:
-        return json.load(f)[config]
+    return read_yaml("file_path")
 
 
 def refresh_current_system():
     # get commander_name
-    try:
-        commander_name = get_commander_name()
-    except:
+    commander_name = get_commander_name()
+    if commander_name == "key not found in config":
         print("commander name not set")
         return
+
     system = get_commander_system(commander_name)
+
     # set system to config
-    config = {"current_system": system}
-    with open(config_filepath, "w") as f:
-        json.dump(config, f)
-        print("set current_system to", system)
+    write_to_yaml("current_system", system)
