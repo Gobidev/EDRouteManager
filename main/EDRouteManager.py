@@ -7,7 +7,7 @@ import threading
 import time
 
 
-def loop_refresh(seconds=7):
+def loop_refresh(seconds=4):
 
     systems = None
     next_system = ""
@@ -29,6 +29,7 @@ def loop_refresh(seconds=7):
                 print("index:", index)
                 if is_system:
                     next_system = systems[index+1]
+                    del systems[index+1]
                 else:
                     next_system = systems[0]
 
