@@ -32,8 +32,9 @@ def loop_refresh(seconds=7):
                 else:
                     next_system = systems[0]
 
+            copy_to_clipboard(next_system)
+
         set_info_content(get_commander_name(), get_current_system(), next_system)
-        copy_to_clipboard(next_system)
 
         time.sleep(seconds)
 
