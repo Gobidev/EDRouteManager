@@ -42,7 +42,7 @@ def start_main_window(height=100, width=425):
     info_label = tk.Label(frame, text="Commander Name:\nCurrent System:\nNext System:", justify="left")
     info_label.place(relx=0.03, rely=0.05, relwidth=1/4, relheight=0.6)
 
-    info_label_2 = tk.Label(frame, text="\n \n \n", justify="left", bg="#bababa")
+    info_label_2 = tk.Label(frame, text="\n \n \n", justify="left")
     info_label_2.place(relx=0.35, rely=0.05, relwidth=1/3, relheight=0.6)
 
     root.mainloop()
