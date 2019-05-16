@@ -2,8 +2,52 @@ import json
 from utils.edsm import get_commander_system
 
 
-config_filepath = "..\config\config.json"
+config_filepath = "..\config\config.yml"
 
+
+def write_to_yaml(key, value):
+
+    old_content = {}
+    new_content = {}
+
+    file = open(config_filepath, "r")
+    content = file.readlines()
+    lines = []
+
+    # remove \n
+    for i in content:
+        i = i.replace("\n", "")
+        lines.append(i)
+
+    # convert content to dictionary
+    for n in lines:
+        content_list = n.split(": ")
+        old_content[content_list[0]] = content_list[1]
+
+    if key in old_content:
+        new_content[key] = value
+        del old_content[key]
+    else:
+        new_content[key] = value
+
+    for f in old_content:
+        new_content[f] = old_content[f]
+
+    file.close()
+
+    # actual writing
+    new_file = open(config_filepath, "w")
+
+    # creating new string
+    final_string = ""
+    for element in new_content:
+        final_string += element
+        final_string += ": "
+        final_string += new_content[element]
+        final_string += "\n"
+
+    new_file.write(final_string)
+    new_file.close()
 
 def set_commander_name(commander_name):
     config = {"commander_name": commander_name}
