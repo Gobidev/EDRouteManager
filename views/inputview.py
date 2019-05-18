@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import messagebox
 from utils.edsm import is_known
 from config.config import *
-import threading
 
 
 def start_input_window(height=170, width=250):
