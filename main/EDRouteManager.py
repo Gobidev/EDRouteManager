@@ -6,6 +6,8 @@ from utils.csv_reader import *
 import threading
 import time
 
+output = False
+
 
 def loop_refresh(seconds=4):
 
@@ -16,17 +18,20 @@ def loop_refresh(seconds=4):
         refresh_current_system()
 
         file_path = get_file_path()
-        print("file_path:", file_path)
+        if output:
+            print("file_path:", file_path)
         if not file_path == "key not found in config":
             if systems is None:
                 table = csv_to_list(file_path)
                 table = delete_first_row(table)
                 systems = get_systems(table)
-                print("systems:", systems)
+                if output:
+                    print("systems:", systems)
             else:
                 is_system, index = is_system_of_route(get_current_system(), systems)
-                print("is_system:", is_system)
-                print("index:", index)
+                if output:
+                    print("is_route_system:", is_system)
+                    print("index:", index)
                 if is_system:
                     next_system = systems[index+1]
 
