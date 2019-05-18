@@ -1,9 +1,13 @@
+from config.config import *
 
 
 def csv_to_list(filename):
-
-    file = open(filename, "r")
-    content = file.read()
+    try:
+        file = open(filename, "r")
+        content = file.read()
+    except:
+        set_file_path("")
+        return
 
     content = content.replace('"', "")
 
