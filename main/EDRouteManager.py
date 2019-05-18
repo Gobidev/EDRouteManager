@@ -33,12 +33,17 @@ def loop_refresh(seconds=4):
                     print("is_route_system:", is_route_system)
                     print("index:", index)
                 if is_route_system:
-                    next_system = systems[index+1]
+                    try:
+                        next_system = systems[index+1]
+                    except:
+                        systems = None
+                        next_system = ""
+                        time.sleep(10)
+                else:
+                    systems = None
+                    time.sleep(10)
 
-            try:
-                copy_to_clipboard(next_system)
-            except:
-                pass
+            copy_to_clipboard(next_system)
 
         set_info_content(get_commander_name(), get_current_system(), next_system)
 
