@@ -6,11 +6,16 @@ copy the next route-system to your clipboard.
 How to use
 -
 1. Download the [latest release](https://github.com/Gobidev/EDRouteManager/releases) of EDRouteManager
+
+    (If you are on Linux, make sure you have Python3 and the [clipboard library](https://pypi.org/project/clipboard/)
+    insalled)
+
 2. Unzip the file
 3. Make sure that you are connected to your EDSM account (EDDiscovery, EDMarketConnector, etc.).
 You can get to EDSM [here](https://www.edsm.net/)
 4. Make sure your flight log is public (option to enter API-key will come in future updates)
 5. Start EDRouteManager
+    (.exe file on Windows, .sh file on Linux)
 6. Enter your commander-name
 7. Go to https://spansh.co.uk/plotter and calculate a route
 8. Download the route as csv and open it in EDRouteManager
