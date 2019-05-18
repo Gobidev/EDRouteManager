@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog
 from config.config import *
+import threading
 
 
 def set_info_content(commander_name, current_system_name, next_system_name):
@@ -20,6 +21,11 @@ def start_main_window(height=100, width=425):
         root.destroy()
         from views.inputview import start_input_window
         start_input_window()
+        threading.Thread(target=start_main_window).start()
+        refresh_current_system()
+        set_info_content(get_commander_name(), get_current_system(), "")
+        from main.EDRouteManager import loop_refresh
+        threading.Thread(target=loop_refresh).start()
 
     root = tk.Tk()
 

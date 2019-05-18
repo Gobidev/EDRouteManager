@@ -28,11 +28,11 @@ def loop_refresh(seconds=4):
                 if output:
                     print("systems:", systems)
             else:
-                is_system, index = is_system_of_route(get_current_system(), systems)
+                is_route_system, index = is_system_of_route(get_current_system(), systems)
                 if output:
-                    print("is_route_system:", is_system)
+                    print("is_route_system:", is_route_system)
                     print("index:", index)
-                if is_system:
+                if is_route_system:
                     next_system = systems[index+1]
 
             try:
@@ -48,7 +48,11 @@ def loop_refresh(seconds=4):
 commander_name = get_commander_name()
 
 if commander_name == "key not found in config":
-    threading.Thread(target=start_input_window).start()
+    start_input_window()
+    threading.Thread(target=start_main_window).start()
+    refresh_current_system()
+    set_info_content(get_commander_name(), get_current_system(), "")
+    threading.Thread(target=loop_refresh).start()
 else:
     threading.Thread(target=start_main_window).start()
     threading.Thread(target=loop_refresh).start()
