@@ -9,7 +9,7 @@ def set_info_content(commander_name, current_system_name, next_system_name):
     info_label_2.config(text=(commander_name + "\n" + current_system_name + "\n" + next_system_name))
 
 
-def start_main_window(height=80, width=425):
+def start_main_window(height=80, width=450):
     global info_label_2
 
     def open_button_press():
@@ -31,7 +31,7 @@ def start_main_window(height=80, width=425):
     root = tk.Tk()
 
     root.title("EDRouteManager")
-    root.tk.call('wm', 'iconphoto', root.w, tk.PhotoImage(file='../views/logo.gif'))
+    root.tk.call('wm', 'iconphoto', root._w, tk.PhotoImage(file='../views/logo.gif'))
     root.iconbitmap(default='../views/logo.gif')
     root.resizable(False, False)
 

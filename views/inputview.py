@@ -18,7 +18,7 @@ def start_input_window(height=70, width=250):
     root = tk.Tk()
 
     root.title("EDRouteManager")
-    root.tk.call('wm', 'iconphoto', root.w, tk.PhotoImage(file='../views/logo.gif'))
+    root.tk.call('wm', 'iconphoto', root._w, tk.PhotoImage(file='../views/logo.gif'))
     root.iconbitmap(default='../views/logo.gif')
     root.resizable(False, False)
 
