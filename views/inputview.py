@@ -2,9 +2,10 @@ import tkinter as tk
 from tkinter import messagebox
 from utils.edsm import is_known
 from config.config import *
+from tkinter import ttk
 
 
-def start_input_window(height=170, width=250):
+def start_input_window(height=70, width=250):
 
     def ok_button_press():
         commander_name = name_entry.get()
@@ -16,9 +17,10 @@ def start_input_window(height=170, width=250):
 
     root = tk.Tk()
 
-    root.title("EDRM")
-    root.tk.call('wm', 'iconphoto', root._w, tk.PhotoImage(file='../views/logo.gif'))
+    root.title("EDRouteManager")
+    root.tk.call('wm', 'iconphoto', root.w, tk.PhotoImage(file='../views/logo.gif'))
     root.iconbitmap(default='../views/logo.gif')
+    root.resizable(False, False)
 
     canvas = tk.Canvas(root, height=height, width=width)
     canvas.pack()
@@ -26,16 +28,16 @@ def start_input_window(height=170, width=250):
     frame = tk.Frame(root, bd=5)
     frame.place(relwidth=1, relheight=1)
 
-    name_label = tk.Label(frame, text="Name:")
-    name_label.place(relwidth=0.25, relheight=0.18, relx=0, rely=0)
+    name_label = ttk.Label(frame, text="Name:")
+    name_label.grid(padx=10, sticky="W")
 
     # api_label = tk.Label(frame, text="API-key (optional):")
     # api_label.place(relwidth=0.4, relheight=0.18, relx=0, rely=0.19)
 
-    name_entry = tk.Entry(frame)
-    name_entry.place(relwidth=0.45, relheight=0.18, relx=0.26, rely=0)
+    name_entry = ttk.Entry(frame)
+    name_entry.grid(row=0, column=1, padx=10, ipadx=20)
 
-    ok_button = tk.Button(frame, text="Ok", command=ok_button_press)
-    ok_button.place(relwidth=0.2, relheight=0.18, relx=0.72, rely=0)
+    ok_button = ttk.Button(frame, text="Ok", command=ok_button_press)
+    ok_button.grid(row=1, column=1, pady=10, ipadx=20)
 
     root.mainloop()
