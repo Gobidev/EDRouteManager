@@ -1,6 +1,4 @@
 from views.mainview import *
-from views.inputview import *
-from config.config import *
 from utils.clipboard import *
 from utils.csv_reader import *
 import threading
@@ -53,11 +51,8 @@ def loop_refresh(seconds=4):
 commander_name = get_commander_name()
 
 if commander_name == "key not found in config":
-    start_input_window()
     threading.Thread(target=start_main_window).start()
     refresh_current_system()
-    set_info_content(get_commander_name(), get_current_system(), "")
-    threading.Thread(target=loop_refresh).start()
 else:
     threading.Thread(target=start_main_window).start()
     threading.Thread(target=loop_refresh).start()
