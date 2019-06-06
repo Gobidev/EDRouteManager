@@ -11,8 +11,8 @@ def set_info_content(commander_name, current_system_name, next_system_name):
     info_label_2.config(text=(commander_name + "\n" + current_system_name + "\n" + next_system_name))
 
 
-def start_main_window(height=160, width=450):
-    global info_label_2
+def start_main_window(height=180, width=450):
+    global info_label_2, progress_lbl, progress
 
     def open_button_press():
         root.filename = filedialog.askopenfilename(
@@ -70,6 +70,12 @@ def start_main_window(height=160, width=450):
     ok_button = ttk.Button(frame, text="Ok", command=ok_button_press)
     ok_button.grid(row=5, columnspan=3, ipadx=20)
 
+    progress_lbl = ttk.Label(frame, text="Progress: ")
+    progress_lbl.grid(row=6, padx=5, pady=5, columnspan=3, sticky="W")
+
+    progress = ttk.Progressbar(frame, mode="determinate", value=0, length=320)
+    progress.grid(row=6, padx=5, pady=5, columnspan=3, sticky="E")
+
     if get_commander_name() == "key not found in config":
         name_entry.focus()
     else:
@@ -79,3 +85,8 @@ def start_main_window(height=160, width=450):
         open_button.focus()
 
     root.mainloop()
+
+
+def show_progress(amount):
+    progress.config(value=amount)
+    progress_lbl.config(text="Progress: " + str(amount) + "%")
