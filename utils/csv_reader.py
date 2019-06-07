@@ -49,3 +49,10 @@ def is_system_of_route(commander_system, route_systems):
         return False, False
     except:
         return False, False
+
+
+def total_systems(route_systems):
+    try:
+        return len(route_systems)
+    except:
+        pass

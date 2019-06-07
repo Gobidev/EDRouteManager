@@ -11,6 +11,7 @@ def loop_refresh(seconds=4):
 
     systems = None
     next_system = ""
+    index = 0
 
     while 1:
         refresh_current_system()
@@ -42,6 +43,10 @@ def loop_refresh(seconds=4):
                     time.sleep(10)
 
             copy_to_clipboard(next_system)
+            try:
+                show_progress((index / total_systems(systems)) * 100)
+            except:
+                show_progress(0)
 
         set_info_content(get_commander_name(), get_current_system(), next_system)
 
