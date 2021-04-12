@@ -1,10 +1,10 @@
 import tkinter as tk
 from tkinter import filedialog
-from config.config import *
+from config import *
 import threading
 from tkinter import ttk
 from tkinter import messagebox
-from utils.edsm import is_known
+from edsm import is_known
 
 
 def set_info_content(commander_name, current_system_name, next_system_name):
@@ -29,14 +29,14 @@ def start_main_window(height=160, width=450):
             info_label.config(state="normal")
             info_label_2.config(state="normal")
             open_button.config(state="normal")
-            from main.EDRouteManager import loop_refresh
+            from EDRouteManager import loop_refresh
             threading.Thread(target=loop_refresh).start()
 
     root = tk.Tk()
 
     root.title("EDRouteManager")
-    root.tk.call('wm', 'iconphoto', root._w, tk.PhotoImage(file='../views/logo.gif'))
-    root.iconbitmap(default='../views/logo.gif')
+    root.tk.call('wm', 'iconphoto', root._w, tk.PhotoImage(file='logo.gif'))
+    root.iconbitmap(default='logo.gif')
     root.resizable(False, False)
 
     canvas = tk.Canvas(root, height=height, width=width)

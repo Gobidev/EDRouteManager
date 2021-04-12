@@ -1,6 +1,6 @@
-from views.mainview import *
-from utils.clipboard import *
-from utils.csv_reader import *
+from mainview import *
+from clipboard import *
+from csv_reader import *
 import threading
 import time
 

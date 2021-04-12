@@ -1,4 +1,4 @@
-from config.config import *
+from config import *
 
 
 def csv_to_list(filename):
