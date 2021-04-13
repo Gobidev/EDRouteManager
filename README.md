@@ -1,7 +1,9 @@
-# EDRouteManager
+# EDRouteManager (DEPRECATED)
 
-EDRouteManager is a simple tool for using "neutron-highways" in Elite: Dangerous that will automatically
-copy the next route-system to your clipboard. 
+# Important
+I made this program a long time ago and got much better at coding. Since the code is very messy and buggy I am currently working on a new version of this program from scratch.
+
+
 
 How to use (Windows)
 -
