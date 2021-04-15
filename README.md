@@ -1,8 +1,7 @@
 # EDRouteManager (DEPRECATED)
 
 # Important
-I made this program a long time ago and got much better at coding. Since the code is very messy and buggy I am currently working on a new version of this program from scratch.
-
+I made this program a long time ago and got much better at coding. I therefore started working on an improved version of this project called EDNeutronAssistant which can be found [here](https://github.com/Gobidev/EDNeutronAssistant).
 
 
 How to use (Windows)
